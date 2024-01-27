@@ -1,11 +1,25 @@
 {
   "name": "jpslibrarycomponents",
-  "version": "0.0.0",
-  "private": true,
+  "version": "0.0.3",
   "type": "module",
+  "files": [
+    "dist"
+  ],
+  "main": "./dist/jps-library-components.umd.cjs",
+  "module": "./dist/jps-library-components.js",
+  "exports": {
+    ".": {
+      "import": "./dist/jps-library-components.js",
+      "require": "./dist/jps-library-components.umd.cjs",
+      "types": "./dist/src/index.d.ts"
+    },
+    "./style.css": "./dist/style.css"
+  },
+  "types": "./dist/index.d.ts",
   "scripts": {
     "dev": "vite",
-    "build": "run-p type-check \"build-only {@}\" --",
+    "build": "vite build && vue-tsc --emitDeclarationOnly",
+    "types": "vue-tsc ",
     "preview": "vite preview",
     "build-only": "vite build",
     "type-check": "vue-tsc --build --force",
