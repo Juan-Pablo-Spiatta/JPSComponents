@@ -9,17 +9,15 @@
     "esModuleInterop": true,
     "skipLibCheck": true,
     "declaration": true,
-    "declarationDir": "dist/types",  // Ubicación para las definiciones de tipo
+    "declarationDir": "./dist/types", // Ubicación para las definiciones de tipo
+    "outDir": "./dist",
+    "emitDeclarationOnly": true, // Solo emite declaraciones
+    "types": ["vite/client"], // Incluye tipos de Vite
     "baseUrl": "./src",
     "paths": {
       "@/*": ["src/*"]
     }
   },
-  "include": [
-    "src/**/*.ts",
-    "src/**/*.d.ts",
-    "src/**/*.tsx",
-    "src/**/*.vue"
-  ],
-  "exclude": ["node_modules"]
+  "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "src/**/*.vue"],
+  "exclude": ["node_modules", "dist"]
 }
